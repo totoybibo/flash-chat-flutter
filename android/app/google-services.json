@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "719385359589",
+    "project_id": "flash-chat-f8229",
+    "storage_bucket": "flash-chat-f8229.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719385359589:android:afa9942fa9ab0696d4100c",
+        "android_client_info": {
+          "package_name": "totoy.bibo.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719385359589-tlfsg4ov01598il1sajjc706ua1rjgf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOaxjvSwHD4lnpIzbJwk1KxB2vV1tJRls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719385359589-tlfsg4ov01598il1sajjc706ua1rjgf5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
