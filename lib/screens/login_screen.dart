@@ -28,11 +28,13 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: 'logo',
-                child: Container(
-                  height: 200.0,
-                  child: Image.asset('images/logo.png'),
+              Flexible(
+                child: Hero(
+                  tag: 'logo',
+                  child: Container(
+                    height: 200.0,
+                    child: Image.asset('images/logo.png'),
+                  ),
                 ),
               ),
               SizedBox(
@@ -80,11 +82,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     } else {
                       throw 'unable to login';
                     }
+                  } catch (e) {
+                    print('unable to login');
+                  } finally {
                     setState(() {
                       showSpinner = false;
                     });
-                  } catch (e) {
-                    print('unable to login');
                   }
                 },
               )

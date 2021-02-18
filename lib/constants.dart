@@ -5,7 +5,14 @@ const kSendButtonTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 18.0,
 );
-
+const kIsMeBorderRadius = BorderRadius.only(
+    topLeft: Radius.circular(30),
+    bottomLeft: Radius.circular(30),
+    bottomRight: Radius.circular(30));
+const kIsNotMeBorderRadius = BorderRadius.only(
+    topRight: Radius.circular(30),
+    bottomLeft: Radius.circular(30),
+    bottomRight: Radius.circular(30));
 const kMessageTextFieldDecoration = InputDecoration(
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   hintText: 'Type your message here...',
