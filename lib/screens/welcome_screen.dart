@@ -1,15 +1,38 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flash_chat/screens/login_screen.dart';
+import 'package:flash_chat/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flash_chat/constants.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static const id = 'welcome';
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  AnimationController controller;
+  Animation animation;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller =
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+    controller.forward();
+    animation =
+        ColorTween(begin: Colors.blue, end: Colors.white).animate(controller);
+    animation.addListener(() => setState(() {}));
+    Firebase.initializeApp();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: animation.value,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -18,16 +41,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Container(
-                  child: Image.asset('images/logo.png'),
-                  height: 60.0,
-                ),
-                Text(
-                  'Flash Chat',
-                  style: TextStyle(
-                    fontSize: 45.0,
-                    fontWeight: FontWeight.w900,
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    child: Image.asset('images/logo.png'),
+                    height: 60.0,
                   ),
+                ),
+                TypewriterAnimatedTextKit(
+                  repeatForever: false,
+                  totalRepeatCount: 2,
+                  text: ['Shit Chat'],
+                  textStyle: TextStyle(
+                      fontSize: 42.5,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black),
                 ),
               ],
             ),
@@ -42,12 +70,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 borderRadius: BorderRadius.circular(30.0),
                 child: MaterialButton(
                   onPressed: () {
-                    //Go to login screen.
+                    Navigator.pushNamed(context, LoginScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(
                     'Log In',
+                    style: kButtonTextStyle,
                   ),
                 ),
               ),
@@ -60,12 +89,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 elevation: 5.0,
                 child: MaterialButton(
                   onPressed: () {
-                    //Go to registration screen.
+                    Navigator.pushNamed(context, RegistrationScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(
                     'Register',
+                    style: kButtonTextStyle,
                   ),
                 ),
               ),
