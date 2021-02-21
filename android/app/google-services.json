@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "297749314407",
+    "project_id": "shitchat-b3ea7",
+    "storage_bucket": "shitchat-b3ea7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297749314407:android:8c8645739b139fb2310dc2",
+        "android_client_info": {
+          "package_name": "totoy.bibo.shitchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297749314407-mk07ehh2rbidc026b8pni6ogllfiqdha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoFZcD1basO11IENBqj19r18C99w2NMI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297749314407-mk07ehh2rbidc026b8pni6ogllfiqdha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
